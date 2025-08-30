@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: kickstart-learning
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app_fastapi_new:app --host 0.0.0.0 --port $PORT --timeout-keep-alive 240
+    autoDeploy: true
